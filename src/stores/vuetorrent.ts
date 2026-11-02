@@ -17,13 +17,14 @@ import {
   TorrentProperty,
 } from '@/constants/vuetorrent'
 import { jsonDeserialize, jsonSerialize } from '@/helpers'
+import { defaultLocale } from '@/locales'
 import { DarkLegacy, LightLegacy } from '@/themes'
 import type { SearchPreset, SearchSortBy } from '@/types/vuetorrent'
 
 export const useVueTorrentStore = defineStore(
   'vuetorrent',
   () => {
-    const language = ref('en')
+    const language = ref<string>(defaultLocale)
     const theme = reactive({
       mode: ThemeMode.SYSTEM,
       light: LightLegacy.id,
@@ -337,7 +338,7 @@ export const useVueTorrentStore = defineStore(
       searchPresetDefaultId,
       logoutUrl,
       $reset: () => {
-        language.value = 'en'
+        language.value = defaultLocale
         theme.mode = ThemeMode.SYSTEM
         theme.light = LightLegacy.id
         theme.dark = DarkLegacy.id

@@ -82,5 +82,5 @@ export const messages: Record<Locales, any> = {
   [Locales.ZH_HANT]: zh_hant,
 }
 
-export const defaultLocale = Locales.EN
+export const defaultLocale = Locales.ZH_HANS
 export const fallbackLocale = Locales.EN
